@@ -1,9 +1,13 @@
-import './App.css'
+import Accordion from './components/Accordion/Accordion';
+import { items } from './data/items';
+import './App.css';
 
 function App() {
 
   return (
-    <>Hi</>
+    <div>
+      <Accordion items={items} />
+    </div>
   )
 }
 

@@ -5,10 +5,11 @@ const Card = ({
   svg, 
   title, 
   description, 
-  type = 'image'
+  type = 'image',
+  clickHandler = ()=>{}
 }) => {
   return (
-    <div className="card">
+    <div onClick={clickHandler} className="card">
       <div className="card-image-container">
         {type === 'image' && image && (
           <img 

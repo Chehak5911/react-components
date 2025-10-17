@@ -1,10 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { components } from "../../data/components";
+import { components } from "../../data/components.jsx";
 import "./sideBar-styles.css";
-
-// const iconMap = {
-  
-// };
 
 const SideBar = ({ activeComponent }) => {
   const navigate = useNavigate();
@@ -18,7 +14,7 @@ const SideBar = ({ activeComponent }) => {
 
       <nav className="sidebar-nav">
         {components.map((component) => {
-          {/* const Icon = iconMap[component.title] || null; */}
+          const Icon = component.icon
           const isActive = activeComponent?.toLowerCase() === component.title.toLowerCase();
 
           return (
@@ -27,7 +23,7 @@ const SideBar = ({ activeComponent }) => {
               className={`sidebar-item ${isActive ? "sidebar-item-active" : ""}`}
               onClick={() => navigate(`/components/${component.title.toLowerCase()}`)}
             >
-              {/* <Icon className="sidebar-icon" size={20} /> */}
+              <Icon className="sidebar-icon" size={20} />
               <span className="sidebar-label">{component.title}</span>
             </button>
           );

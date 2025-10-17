@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import heroGraphic from '../../assets/images/hero-graphic.jpg';
-import { components } from '../../data/components';
+import { components } from '../../data/components.jsx';
 import Card from '../../components/Card/Card';
-import './homePage-styles.css';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import './homePage-styles.css';
 
 const categories = ["All", "UI", "Forms", "Navigation"];
 

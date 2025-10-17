@@ -1,0 +1,63 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid hsl(220, 15%, 20%);
+  background-color: hsl(220, 15%, 12%);
+  box-shadow: 0 4px 6px -1px hsl(0, 0%, 0%, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 75%;
+}
+
+.card:hover {
+  box-shadow: 0 0 40px hsl(199, 89%, 48%, 0.2);
+  border-color: hsl(199, 89%, 48%, 0.5);
+}
+
+.card-image-container {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background-color: hsl(220, 15%, 18%);
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.card-title {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: hsl(210, 40%, 98%);
+}
+
+.card-description {
+  font-size: 14px;
+  color: hsl(215, 20%, 65%);
+}
+
+.card-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: hsl(220, 15%, 18%);
+}
+
+.card-svg svg {
+  width: 60px;
+  height: 60px;
+  color: hsl(199, 89%, 65%);
+  transition: transform 0.3s ease, color 0.3s ease;
+}

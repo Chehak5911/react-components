@@ -3,9 +3,7 @@ import { useState } from 'react';
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import './accordion-styles.css';
 
-const Accordion = ({props}) => {
-    //items -> an array of objects, each obj containing title and content
-    const {items} = props;
+const Accordion = ({items}) => {
     
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -27,10 +25,7 @@ const Accordion = ({props}) => {
                                 onClick={()=> handleToggle(index)}
                             >
                                 {item.title}
-                                { activeIndex === index ? 
-                                    (<FaChevronUp style={{float: 'right'}} />) :
-                                    (<FaChevronDown style={{float: 'right'}} />)
-                                }
+                                { activeIndex === index ? <FaChevronUp /> : <FaChevronDown /> }
                             </button>
                             {
                                 activeIndex===index && (

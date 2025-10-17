@@ -1,7 +1,11 @@
-.header {
+.header-header {
   border-bottom: 1px solid hsl(220, 15%, 20%);
   background-color: hsl(220, 20%, 10%, 0.95);
   backdrop-filter: blur(10px);
+}
+
+.header-container{
+  padding: 0 10px;
 }
 
 .header-content {
@@ -17,13 +21,13 @@
   gap: 32px;
 }
 
-.logo-container {
+.header-logo-container {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.logo-icon {
+.header-logo-icon {
   display: flex;
   height: 32px;
   width: 32px;
@@ -33,20 +37,20 @@
   background-color: hsl(199, 89%, 48%);
 }
 
-.logo-grid {
+.header-logo-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2px;
 }
 
-.logo-square {
+.header-logo-square {
   height: 8px;
   width: 8px;
   border-radius: 2px;
   background-color: white;
 }
 
-.logo-text {
+.header-logo-text {
   font-size: 20px;
   font-weight: 700;
 }
@@ -57,7 +61,7 @@
   gap: 16px;
 }
 
-.search-box {
+.header-search-box {
   display: none;
   align-items: center;
   gap: 8px;
@@ -69,16 +73,16 @@
 }
 
 @media (min-width: 640px) {
-  .search-box {
+  .header-search-box {
     display: flex;
   }
 }
 
-.search-icon {
+.header-search-icon {
   color: hsl(215, 20%, 65%);
 }
 
-.search-box input {
+.header-search-box input {
   flex: 1;
   background-color: transparent;
   font-size: 14px;
@@ -87,11 +91,11 @@
   color: hsl(210, 40%, 98%);
 }
 
-.search-box input::placeholder {
+.header-search-box input::placeholder {
   color: hsl(215, 20%, 65%);
 }
 
-.btn-primary {
+.header-btn-primary {
   background-color: hsl(199, 89%, 48%);
   color: white;
   padding: 8px 16px;
@@ -103,6 +107,6 @@
   transition: background-color 0.2s;
 }
 
-.btn-primary:hover {
+.header-btn-primary:hover {
   background-color: hsl(199, 89%, 42%);
 }

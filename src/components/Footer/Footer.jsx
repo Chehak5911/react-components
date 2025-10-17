@@ -2,8 +2,7 @@ import './footer-styles.css';
 
 const Footer = () => {
     return (
-    <footer className="footer">
-        {/* <div className="container"> */}
+    <footer className="footer-footer">
           <div className="footer-content">
             <nav className="footer-links">
               <a href="#">Documentation</a>
@@ -11,7 +10,7 @@ const Footer = () => {
               <a href="#">Contact Us</a>
             </nav>
 
-            <div className="social-links">
+            <div className="footer-social-links">
               <a href="#" aria-label="Code">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <polyline points="16 18 22 12 16 6"></polyline>
@@ -32,11 +31,10 @@ const Footer = () => {
               </a>
             </div>
 
-            <p className="copyright">
+            <p className="footer-copyright">
               © 2025 Component Library. All rights reserved.
             </p>
           </div>
-        {/* </div> */}
     </footer>
     )
 }

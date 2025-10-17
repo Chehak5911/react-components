@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import SideBar from "../../components/SideBar/SideBar";
 import Header from "../../components/Header/Header";
-import './componentPage-styles.css';
 import Footer from "../../components/Footer/Footer";
+import AccordionDocs from "../../docs/AccordionDocs";
+import './componentPage-styles.css';
 
 const componentsMap = {
-  
+  accordion : AccordionDocs
 };
 
 const ComponentPage = () => {
@@ -14,10 +15,12 @@ const ComponentPage = () => {
   return (
     <div className="component-page">
       <Header />
-      <SideBar activeComponent={componentName} />
-      {
-        DocComponent && <DocComponent />
-      }
+        <div className="component-page-container">
+          <SideBar activeComponent={componentName} />
+          {
+            DocComponent && <DocComponent />
+          }
+        </div>
       <Footer />
     </div>
   )

@@ -35,7 +35,7 @@ export const components = [
   {
     id: 5,
     image: modalsImg,
-    title: "Modals",
+    title: "Accordion",
     description: "Accessible and customizable modal dialogs for focused user interaction.",
     category: "Navigation"
   },

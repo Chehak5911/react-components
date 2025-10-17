@@ -22,21 +22,21 @@ const HomePage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-text">
-              <h1 className="hero-title">Build Beautiful UIs, Faster</h1>
-              <p className="hero-description">
+      <section className="home-page-hero">
+        <div className="home-page-container">
+          <div className="home-page-hero-content">
+            <div className="home-page-hero-text">
+              <h1 className="home-page-hero-title">Build Beautiful UIs, Faster</h1>
+              <p className="home-page-hero-description">
                 Beautifully designed, accessible, and easy-to-use React components for modern web applications.
               </p>
-              <div className="hero-buttons">
-                <button onClick={() => window.location.href = "#explore"} className="btn-primary btn-lg">Explore Components</button>
+              <div className="home-page-hero-buttons">
+                <button onClick={() => window.location.href = "#explore"} className="home-page-btn-primary home-page-btn-lg">Explore Components</button>
               </div>
             </div>
             
-            <div className="hero-image">
-              <div className="hero-image-wrapper">
+            <div className="home-page-hero-image">
+              <div className="home-page-hero-image-wrapper">
                 <img src={heroGraphic} alt="Abstract gradient shapes" />
               </div>
             </div>
@@ -45,35 +45,35 @@ const HomePage = () => {
       </section>
 
       {/* Explore Components Section */}
-      <section className="explore-section" id='explore'>
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Explore Components</h2>
-            <p className="section-description">
+      <section className="home-page-explore-section" id='explore'>
+        <div className="home-page-container">
+          <div className="home-page-section-header">
+            <h2 className="home-page-section-title">Explore Components</h2>
+            <p className="home-page-section-description">
               Browse our library of pre-built components, ready to be used in your projects.
             </p>
           </div>
 
-          <div className="category-filters">
+          <div className="home-page-category-filters">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`category-btn ${activeCategory === category ? 'active' : ''}`}
+                className={`home-page-category-btn ${activeCategory === category ? 'active' : ''}`}
               >
                 {category}
               </button>
             ))}
           </div>
 
-          <div className="cards-grid">
+          <div className="home-page-cards-grid">
             {filteredComponents.map((component) => (
               <Card
                 key={component.id}
                 image={component.image}
                 title={component.title}
                 description={component.description}
-                clickHandler={()=> navigate('/component/component.title')}
+                clickHandler={()=> navigate(`/component/${component.title}`)}
               />
             ))}
           </div>
@@ -81,17 +81,17 @@ const HomePage = () => {
       </section>
 
       {/* Core Features Section */}
-      <section className="features-section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Core Features</h2>
-            <p className="section-description">
+      <section className="home-page-features-section">
+        <div className="home-page-container">
+          <div className="home-page-section-header">
+            <h2 className="home-page-section-title">Core Features</h2>
+            <p className="home-page-section-description">
               Our library is packed with features to make your development process smoother and more efficient.
             </p>
-            <button className="btn-primary">Learn More</button>
+            <button className="home-page-btn-primary">Learn More</button>
           </div>
 
-          <div className="features-grid">
+          <div className="home-page-features-grid">
             <Card
             type="svg"
             svg={
@@ -153,7 +153,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Contact/Footer Section */}
       <Footer />
     </div>
   );

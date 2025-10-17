@@ -1,4 +1,4 @@
-.footer {
+.footer-footer {
   border-top: 1px solid hsl(220, 15%, 20%);
   background-color: hsl(220, 15%, 12%);
   margin-top: 40px;
@@ -30,12 +30,12 @@
   color: hsl(210, 40%, 98%);
 }
 
-.social-links {
+.footer-social-links {
   display: flex;
   gap: 16px;
 }
 
-.social-links a {
+.footer-social-links a {
   display: flex;
   height: 36px;
   width: 36px;
@@ -48,11 +48,11 @@
   transition: background-color 0.2s;
 }
 
-.social-links a:hover {
+.footer-social-links a:hover {
   background-color: hsl(220, 15%, 18%);
 }
 
-.copyright {
+.footer-copyright {
   font-size: 14px;
   color: hsl(215, 20%, 65%);
 }

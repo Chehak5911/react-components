@@ -1,0 +1,297 @@
+.docs-container {
+  min-height: 100vh;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- HEADER ---------- */
+.docs-header {
+  margin-bottom: 2rem;
+}
+
+.docs-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: hsl(var(--foreground));
+}
+
+.docs-subtitle {
+  color: hsl(var(--muted-foreground));
+  font-size: 1rem;
+}
+
+/* ---------- CONTENT ---------- */
+.docs-content {
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.docs-preview-section {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 3rem;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.docs-preview-box {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* ---------- PROPS PANEL ---------- */
+.docs-props-panel {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.docs-props-panel h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--foreground));
+}
+
+.docs-prop-group {
+  margin-bottom: 1.5rem;
+}
+
+.docs-prop-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: hsl(var(--foreground));
+}
+
+.docs-prop-description {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  background: hsl(var(--muted));
+  padding: 0.5rem;
+  border-radius: calc(var(--radius) - 2px);
+}
+
+/* ---------- VARIANT BUTTONS ---------- */
+.docs-variant-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.docs-variant-btn {
+  padding: 0.5rem 1rem;
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 2px);
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.docs-variant-btn:hover {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.docs-variant-btn.active {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-color: hsl(var(--primary));
+}
+
+/* ---------- TOGGLE SWITCH ---------- */
+.docs-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.docs-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.docs-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(var(--muted));
+  transition: 0.3s;
+  border-radius: 24px;
+}
+
+.docs-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .docs-toggle-slider {
+  background-color: hsl(var(--primary));
+}
+
+input:checked + .docs-toggle-slider:before {
+  transform: translateX(24px);
+}
+
+/* ---------- TABS ---------- */
+/* ---------- Tabs Container ---------- */
+.docs-tabs-container {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  margin-top: 2rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px hsl(var(--border));
+}
+
+/* ---------- Tabs Row ---------- */
+.docs-tabs {
+  display: flex;
+  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  padding: 0 1rem;
+}
+
+.docs-tab {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.docs-tab:hover {
+  color: hsl(var(--foreground));
+}
+
+.docs-tab.active {
+  color: hsl(var(--primary));
+  border-bottom: 2px solid hsl(var(--primary));
+}
+
+/* ---------- Tab Content ---------- */
+.docs-tab-content {
+  padding: 2rem 2.5rem;
+  background: hsl(var(--background));
+  border-top: 1px solid hsl(var(--border));
+}
+
+/* ---------- Code Section ---------- */
+.docs-code-section {
+  margin-bottom: 2rem;
+}
+
+.docs-code-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--foreground));
+}
+
+/* ---------- Code Block ---------- */
+.docs-code-block {
+  position: relative;
+  background: hsl(var(--code-bg, 220 20% 8%));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+}
+
+.docs-code-block code {
+  color: hsl(var(--foreground));
+  font-family: 'Fira Code', 'Menlo', 'Monaco', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+/* ---------- Copy Button ---------- */
+.docs-copy-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+  border-radius: calc(var(--radius) - 2px);
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+  color: hsl(var(--foreground));
+}
+
+.docs-copy-btn:hover {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+/* ---------- API SECTION ---------- */
+.docs-api-section {
+  overflow-x: auto;
+}
+
+.docs-api-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.docs-api-table thead {
+  background: hsl(var(--muted));
+}
+
+.docs-api-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.docs-api-table td {
+  padding: 0.75rem 1rem;
+  color: hsl(var(--muted-foreground));
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.docs-api-table tbody tr:hover {
+  background: hsl(var(--muted));
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .docs-content {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-props-panel {
+    order: -1;
+  }
+}

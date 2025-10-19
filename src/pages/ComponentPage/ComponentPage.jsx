@@ -3,6 +3,7 @@ import SideBar from "../../components/SideBar/SideBar";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import AccordionDocs from "../../docs/AccordionDocs";
+import { components } from "../../data/components";
 import './componentPage-styles.css';
 
 const componentsMap = {
@@ -14,7 +15,7 @@ const ComponentPage = () => {
   const DocComponent = componentsMap[componentName.toLowerCase()];
   return (
     <div className="component-page">
-      <Header />
+      <Header availableComponents={components} />
         <div className="component-page-container">
           <SideBar activeComponent={componentName} />
           {

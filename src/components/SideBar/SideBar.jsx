@@ -24,7 +24,9 @@ const SideBar = ({ activeComponent }) => {
               onClick={() => navigate(`/components/${component.title.toLowerCase()}`)}
             >
               <Icon className="sidebar-icon" size={20} />
-              <span className="sidebar-label">{component.title}</span>
+              <span className="sidebar-label">
+                {component.title.charAt(0).toUpperCase() + component.title.slice(1)}
+              </span>
             </button>
           );
         })}

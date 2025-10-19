@@ -11,7 +11,7 @@ export const components = [
   {
     id: 1,
     image: buttonsImg,
-    title: "Buttons",
+    title: "buttons",
     description: "A collection of customizable button styles for various actions.",
     category: "UI",
     icon: IoIosRadioButtonOff 
@@ -19,7 +19,7 @@ export const components = [
   {
     id: 2,
     image: cardsImg,
-    title: "Cards",
+    title: "cards",
     description: "Versatile card components for displaying content and actions.",
     category: "UI",
     icon: CiCreditCard1 
@@ -27,7 +27,7 @@ export const components = [
   {
     id: 3,
     image: accordionImg,
-    title: "Accordion",
+    title: "accordion",
     description: "A collapsible content container for organizing information.",
     category: "UI",
     icon: TfiLayoutAccordionMerged 
@@ -35,7 +35,7 @@ export const components = [
   {
     id: 4,
     image: buttonsImg,
-    title: "ChipsInput",
+    title: "chipsInput",
     description: "Accessible and customizable modal dialogs for focused user interaction.",
     category: "UI", 
     icon: MdOutlinePowerInput 

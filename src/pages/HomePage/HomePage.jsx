@@ -19,7 +19,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <Header />
+      <Header availableComponents={components} />
 
       {/* Hero Section */}
       <section className="home-page-hero">

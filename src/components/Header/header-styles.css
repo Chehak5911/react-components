@@ -110,3 +110,37 @@
 .header-btn-primary:hover {
   background-color: hsl(199, 89%, 42%);
 }
+
+.header-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.header-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  list-style: none;
+  margin: 4px 0 0 0;
+  padding: 4px 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.header-dropdown-item {
+  padding: 8px 12px;
+  color: hsl(var(--foreground));
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.header-dropdown-item:hover {
+  background-color: hsl(var(--muted));
+}
+

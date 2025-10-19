@@ -1,77 +1,82 @@
-import { useState } from 'react';
-import './styles.css';
+import { useState } from "react";
+import "./styles.css";
 
-const DocsLayout = ({ 
-  title, 
-  subtitle, 
-  preview, 
-  usageCode, 
-  examplesCode, 
-  apiData 
+const DocsLayout = ({
+  title,
+  subtitle,
+  preview,
+  usageCode,
+  examplesCode,
+  apiData,
+  notes,
 }) => {
-  const [activeTab, setActiveTab] = useState('usage');
+  // Dynamically show tabs only if data exists
+  const availableTabs = [
+    usageCode && "usage",
+    apiData?.length > 0 && "props",
+    examplesCode && "examples",
+    notes && "notes",
+  ].filter(Boolean);
+
+  const [activeTab, setActiveTab] = useState(availableTabs[0] || "usage");
+
+  const tabLabels = {
+    usage: "Usage",
+    props: "Props",
+    examples: "Examples",
+    notes: "Notes",
+  };
 
   return (
     <div className="docs-container">
-      {/* Header Section */}
+      {/* Header */}
       <div className="docs-header">
         <h1>{title}</h1>
         <p className="docs-subtitle">{subtitle}</p>
       </div>
 
-      {/* Preview Section */}
+      {/* Preview */}
       <div className="docs-content">
         <div className="docs-preview-section">
-          <div className="docs-preview-box">
-            {preview}
-          </div>
+          <div className="docs-preview-box">{preview}</div>
         </div>
       </div>
 
-      {/* Tabs Section */}
+      {/* Tabs */}
       <div className="docs-tabs-container">
         <div className="docs-tabs">
-          <button 
-            className={`docs-tab ${activeTab === 'usage' ? 'active' : ''}`}
-            onClick={() => setActiveTab('usage')}
-          >
-            Usage
-          </button>
-          <button 
-            className={`docs-tab ${activeTab === 'examples' ? 'active' : ''}`}
-            onClick={() => setActiveTab('examples')}
-          >
-            Code Example
-          </button>
-          <button 
-            className={`docs-tab ${activeTab === 'api' ? 'active' : ''}`}
-            onClick={() => setActiveTab('api')}
-          >
-            Props
-          </button>
+          {availableTabs.map((tab) => (
+            <button
+              key={tab}
+              className={`docs-tab ${activeTab === tab ? "active" : ""}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tabLabels[tab]}
+            </button>
+          ))}
         </div>
 
         {/* Tab Content */}
         <div className="docs-tab-content">
-          {activeTab === 'usage' && (
+          {activeTab === "usage" && usageCode && (
             <div className="docs-code-section">
-              <h3>Basic Usage</h3>
+              <h3>Usage</h3>
               <pre className="docs-code-block">
                 <code>{usageCode}</code>
               </pre>
             </div>
           )}
 
-          {activeTab === 'examples' && (
+          {activeTab === "examples" && examplesCode && (
             <div className="docs-code-section">
-              <h3>Example</h3>
+              <h3>Examples</h3>
               <pre className="docs-code-block">
                 <code>{examplesCode}</code>
               </pre>
             </div>
           )}
 
-          {activeTab === 'api' && (
+          {activeTab === "props" && apiData?.length > 0 && (
             <div className="docs-api-section">
               <h3>Props API</h3>
               <table className="docs-api-table">
@@ -94,6 +99,13 @@ const DocsLayout = ({
                   ))}
                 </tbody>
               </table>
+            </div>
+          )}
+
+          {activeTab === "notes" && notes && (
+            <div className="docs-notes-section">
+              <h3>Notes</h3>
+              <p>{notes}</p>
             </div>
           )}
         </div>

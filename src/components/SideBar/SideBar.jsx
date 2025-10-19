@@ -21,7 +21,7 @@ const SideBar = ({ activeComponent }) => {
             <button
               key={component.id}
               className={`sidebar-item ${isActive ? "sidebar-item-active" : ""}`}
-              onClick={() => navigate(`/components/${component.title.toLowerCase()}`)}
+              onClick={() => navigate(`/component/${component.title}`)}
             >
               <Icon className="sidebar-icon" size={20} />
               <span className="sidebar-label">

@@ -1,4 +1,5 @@
 :root {
+  /* 🎨 Base Theme Colors */
   --background: 220 20% 10%;
   --foreground: 210 40% 98%;
   --card: 220 15% 13%;
@@ -10,10 +11,16 @@
   --primary: 200 100% 50%;
   --primary-foreground: 0 0% 100%;
   --radius: 8px;
+
+  /* 🌈 Gradient Background Colors */
+  --background-start: 220 29% 17%; /* ≈ #1e293b */
+  --background-end: 222 46% 12%;   /* ≈ #0f172a */
 }
 
 body {
+  /* 🩵 Fallback solid background */
   background: hsl(var(--background));
+
   color: hsl(var(--foreground));
   font-family: 'Inter', sans-serif;
 }
